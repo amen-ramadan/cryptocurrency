@@ -76,7 +76,12 @@ const LineChartComponent = memo(({ coinHistory, currentPrice, coinName }: Props)
     animation: {duration: 3000},
     scales: {
       y: { beginAtZero: true },
-      x: { type: 'time', time: { unit: 'day' } },
+      x: {
+        type: 'timeseries' as const,
+        time: {
+          unit: 'day' as const,
+        },
+      },
     },
   }), []);
 
